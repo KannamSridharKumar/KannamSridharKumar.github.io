@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apps — Sridhar Kumar Kannam, PhD" />
+  <title>Apps · Sridhar Kumar Kannam</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #ffffff;
+      --text:    #111827;
+      --muted:   #6b7280;
+      --accent:  #2563eb;
+      --border:  #e5e7eb;
+      --surface: #f9fafb;
+      --max-w:   700px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .skip { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 8px 14px; z-index: 100; border-radius: 0 0 6px 0; }
+    .skip:focus { top: 0; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky; top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+    .nav-name { font-weight: 700; font-size: .95rem; color: var(--text); text-decoration: none; }
+    .nav-name:hover { text-decoration: none; color: var(--accent); }
+    .nav-links { display: flex; gap: 1.4rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .875rem; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.active { color: var(--text); font-weight: 600; }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0; }
+
+    h2 {
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); margin-bottom: 1.75rem;
+    }
+
+    /* App cards */
+    .app-grid { display: flex; flex-direction: column; gap: 1.2rem; }
+    .app-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.4rem 1.5rem;
+      transition: border-color .15s;
+    }
+    .app-card:hover { border-color: #9ca3af; }
+    .app-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: .5rem; }
+    .app-name { font-weight: 700; font-size: 1rem; }
+    .app-link {
+      font-size: .78rem; color: var(--accent);
+      border: 1px solid var(--accent); border-radius: 5px;
+      padding: .2rem .6rem; white-space: nowrap; flex-shrink: 0;
+      transition: background .15s, color .15s;
+    }
+    .app-link:hover { background: var(--accent); color: #fff; text-decoration: none; }
+    .app-desc { font-size: .88rem; color: var(--muted); margin-bottom: .75rem; }
+    .app-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .app-tag {
+      background: var(--bg); border: 1px solid var(--border);
+      padding: .12rem .5rem; border-radius: 4px; font-size: .75rem; color: var(--muted);
+    }
+    .app-links { display: flex; flex-wrap: wrap; gap: .4rem; flex-shrink: 0; }
+    .app-links a {
+      font-size: .78rem; color: var(--accent);
+      border: 1px solid var(--accent); border-radius: 5px;
+      padding: .2rem .6rem; text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .app-links a:hover { background: var(--accent); color: #fff; }
+
+    /* Empty state */
+    .empty {
+      text-align: center; padding: 4rem 0; color: var(--muted);
+    }
+    .empty-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .empty p { font-size: .9rem; }
+
+    footer {
+      padding: 2rem 0; text-align: center;
+      color: var(--muted); font-size: .82rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 580px) {
+      .nav-links { gap: .9rem; }
+      .app-card-header { flex-direction: column; gap: .4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Sridhar Kumar Kannam</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="apps.html" class="active">Apps</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+  <section>
+    <div class="wrap">
+      <p style="margin-bottom: 2rem; text-align: justify;">
+        Thanks to AI coding assistants, now I can give a face to my ideas. I'm a backend guy with no
+        frontend development skills.
+      </p>
+
+      <div class="app-grid">
+
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">AIDentify</span>
+            <div class="app-links">
+              <a href="https://gray-meadow-07670830f.2.azurestaticapps.net" target="_blank" rel="noopener">Launch app →</a>
+              <a href="https://aididentifydocs.z13.web.core.windows.net/" target="_blank" rel="noopener">API docs →</a>
+              <a href="https://AIDentify-api-wojfgv.azurewebsites.net/docs" target="_blank" rel="noopener">Swagger →</a>
+            </div>
+          </div>
+          <p class="app-desc">
+            Can you tell if an image is real or AI-generated? AIDentify analyses images using 10 independent
+            pixel-level algorithms — FFT spectral analysis, noise pattern detection, texture analysis, and more —
+            returning a probability score and a plain-English verdict. No sign-up needed; just drag and drop.
+          </p>
+          <div class="app-tags">
+            <span class="app-tag">Image forensics</span>
+            <span class="app-tag">AI detection</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">IntuiteMe</span>
+            <div class="app-links">
+              <a href="https://intuitemeweb.z13.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">
+            Probability can feel abstract and intimidating. IntuiteMe makes it concrete — pick coins, dice,
+            or cards, ask a question in plain English, and the app scans every possible outcome, highlights
+            matches, and shows you the exact probability as a fraction, percentage, and a clear explanation.
+          </p>
+          <div class="app-tags">
+            <span class="app-tag">Probability</span>
+            <span class="app-tag">Education</span>
+            <span class="app-tag">Visualisation</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">MFCompare</span>
+            <div class="app-links">
+              <a href="https://mfcompareapp.z8.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">
+            With 2,000+ mutual funds in India, do you really know what you own? MFCompare reveals the overlap
+            between funds in your portfolio — showing your actual stock positions and sector exposure across
+            all funds combined, so you can invest with clarity rather than guesswork.
+          </p>
+          <div class="app-tags">
+            <span class="app-tag">Finance</span>
+            <span class="app-tag">Mutual funds</span>
+            <span class="app-tag">India</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">DBDocs</span>
+            <div class="app-links">
+              <a href="https://github.com/KannamSridharKumar/DBDocs" target="_blank" rel="noopener">GitHub →</a>
+              <a href="https://github.com/KannamSridharKumar/DBDocs/tree/main/sample_output/chinook" target="_blank" rel="noopener">Chinook DB →</a>
+              <a href="https://github.com/KannamSridharKumar/DBDocs/tree/main/sample_output/northwind" target="_blank" rel="noopener">Northwind DB →</a>
+            </div>
+          </div>
+          <p class="app-desc">
+            Documenting a database is tedious work that rarely gets done. DBDocs automates it — connect to
+            your database and it handles schema discovery, data profiling, and generates an AI-powered data
+            dictionary. Open source and built for teams who want to understand their data without the toil.
+          </p>
+          <div class="app-tags">
+            <span class="app-tag">Data engineering</span>
+            <span class="app-tag">Documentation</span>
+            <span class="app-tag">Open source</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">SOTU Archive</span>
+            <div class="app-links">
+              <a href="https://sotuappweb.z8.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">
+            Every U.S. State of the Union address from 1790 to 2026, searchable and conversational. Combine
+            keyword search for precise matches with AI-powered chat (RAG) to explore themes, compare eras,
+            and ask deeper questions across 230+ years of presidential speeches.
+          </p>
+          <div class="app-tags">
+            <span class="app-tag">RAG</span>
+            <span class="app-tag">History</span>
+            <span class="app-tag">Search</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>I enjoy solving problems with data, software, and AI.</p>
+  </div>
+</footer>
+
+</body>
+</html>

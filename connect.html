@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Connect — Sridhar Kumar Kannam, PhD" />
+  <title>Connect · Sridhar Kumar Kannam</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #ffffff;
+      --text:    #111827;
+      --muted:   #6b7280;
+      --accent:  #2563eb;
+      --border:  #e5e7eb;
+      --surface: #f9fafb;
+      --max-w:   700px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .skip { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 8px 14px; z-index: 100; border-radius: 0 0 6px 0; }
+    .skip:focus { top: 0; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky; top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+    .nav-name { font-weight: 700; font-size: .95rem; color: var(--text); text-decoration: none; }
+    .nav-name:hover { text-decoration: none; color: var(--accent); }
+    .nav-links { display: flex; gap: 1.4rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .875rem; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.active { color: var(--text); font-weight: 600; }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0; }
+
+    h2 {
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); margin-bottom: 1.75rem;
+    }
+
+    .connect-intro { font-size: .95rem; color: var(--muted); margin-bottom: 2rem; }
+
+    /* Social cards */
+    .social-grid { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .social-card {
+      display: flex; align-items: center; gap: .4rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: .38rem .7rem; color: var(--text); text-decoration: none;
+      font-size: .78rem; font-weight: 500; cursor: pointer;
+      transition: border-color .15s, color .15s;
+    }
+    .social-card:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .card-icon { width: 15px; height: 15px; flex-shrink: 0; color: var(--muted); }
+    .card-icon.yt { color: #dc2626; }
+    .social-card:hover .card-icon { color: var(--accent); }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      background: var(--text); color: var(--bg);
+      padding: .45rem 1rem; border-radius: 6px; font-size: .82rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .toast.show { opacity: 1; }
+
+    footer {
+      padding: 2rem 0; text-align: center;
+      color: var(--muted); font-size: .82rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 580px) {
+      .nav-links { gap: .9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Sridhar Kumar Kannam</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="apps.html">Apps</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="connect.html" class="active">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+  <section>
+    <div class="wrap">
+      <p class="connect-intro">Feel free to reach out — I'm always happy to connect, collaborate, or chat about AI or anything else.</p>
+
+      <div class="social-grid">
+
+        <span class="social-card" onclick="copyEmail()">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </span>
+
+        <a class="social-card" href="https://www.linkedin.com/in/sridharkumarkannam/" target="_blank" rel="noopener">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+
+        <a class="social-card" href="https://www.youtube.com/@SridharKumarKannam" target="_blank" rel="noopener">
+          <svg class="card-icon yt" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          YouTube
+        </a>
+
+        <a class="social-card" href="https://medium.com/@KannamSridharKumar" target="_blank" rel="noopener">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+          Medium
+        </a>
+
+        <a class="social-card" href="https://scholar.google.ca/citations?user=SiXzxaoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+
+        <a class="social-card" href="https://github.com/KannamSridharKumar" target="_blank" rel="noopener">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>I enjoy solving problems with data, software, and AI.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Email copied!</div>
+
+<script>
+  function copyEmail() {
+    navigator.clipboard.writeText('urssrisri@gmail.com');
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  }
+</script>
+
+</body>
+</html>

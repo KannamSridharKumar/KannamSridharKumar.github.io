@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sridhar Kumar Kannam, PhD — Senior AI Leader with 15+ years driving business outcomes through AI/ML and automation." />
+  <title>Sridhar Kumar Kannam</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #ffffff;
+      --text:    #111827;
+      --muted:   #6b7280;
+      --accent:  #2563eb;
+      --border:  #e5e7eb;
+      --surface: #f9fafb;
+      --max-w:   700px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .skip { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 8px 14px; z-index: 100; border-radius: 0 0 6px 0; }
+    .skip:focus { top: 0; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky; top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+    .nav-name { font-weight: 700; font-size: .95rem; color: var(--text); text-decoration: none; }
+    .nav-name:hover { text-decoration: none; color: var(--accent); }
+    .nav-links { display: flex; gap: 1.4rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .875rem; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.active { color: var(--text); font-weight: 600; }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); margin-bottom: 1.75rem;
+    }
+
+    .intro { font-size: 1.05rem; margin-bottom: .85rem; }
+    #about p, #about blockquote { text-align: justify; }
+    blockquote {
+      font-style: italic; color: var(--muted);
+      border-left: 3px solid var(--border);
+      padding-left: 1rem; margin: 1.25rem 0;
+    }
+
+    .stats {
+      display: flex; gap: 0; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden; margin: 1.5rem 0;
+    }
+    .stat {
+      flex: 1; min-width: 100px;
+      padding: 1.1rem 1rem; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-val { display: block; font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+    .stat-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+
+    .yt-card {
+      display: flex; gap: 1rem; align-items: center;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 1rem 1.2rem; color: inherit;
+      transition: border-color .15s;
+    }
+    .yt-card:hover { border-color: #9ca3af; text-decoration: none; }
+    .yt-icon { font-size: 1.8rem; line-height: 1; color: #dc2626; }
+    .yt-name { font-weight: 600; font-size: .95rem; }
+    .yt-sub { font-size: .82rem; color: var(--muted); }
+
+    footer {
+      padding: 2rem 0; text-align: center;
+      color: var(--muted); font-size: .82rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 580px) {
+      .nav-links { gap: .9rem; }
+      .stat { min-width: 80px; padding: .9rem .6rem; }
+      .stat-val { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Sridhar Kumar Kannam</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="apps.html">Apps</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ── About ── -->
+  <section id="about">
+    <div class="wrap">
+      <p class="intro">Hi, I'm Sri 👋</p>
+
+      <p style="margin-bottom: .85rem;">
+        I enjoy solving problems with data, software, and AI. I've been working in the data science and AI space
+        for over 15 years. Prior to that I'm a researcher with a PhD in Computational Science.
+      </p>
+
+      <p style="margin-bottom: .85rem;">
+        I began my working career in 2007 with the fascinating world of simulations — particularly Monte Carlo
+        simulations. I was captivated by running virtual and numerical experiments millions of times to find
+        outcome distributions and the most probable results.
+      </p>
+
+      <p style="margin-bottom: .85rem;">
+        In my current roles, I work with senior management, provide thought leadership, build and lead small
+        data science and AI teams, and handle end-to-end delivery from discovery to production deployment to
+        drive business outcomes. I've designed and delivered hands-on Generative AI workshops that enable
+        practical adoption and build organisational AI capability.
+      </p>
+
+      <p style="margin-bottom: .85rem;">
+        In my previous research roles, I worked with researchers from multiple universities and industries on
+        problems related to nanotechnology. I've mentored and co-supervised a number of PhD students. With
+        50+ peer-reviewed publications, 2 patents, and 2,000+ citations. I held honorary appointments from
+        the University of Melbourne, Swinburne University of Technology, and RMIT.
+      </p>
+
+      <blockquote>"Education is a lifelong pursuit" — I try to learn every day.</blockquote>
+
+      <p style="font-size: .9rem; color: var(--muted); margin: 1.5rem 0 1rem;">
+        I've a YouTube channel on AI, where I share practical and step-by-step tutorials.
+      </p>
+      <a class="yt-card" href="https://www.youtube.com/@SridharKumarKannam" target="_blank" rel="noopener">
+        <span class="yt-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </span>
+        <div>
+          <div class="yt-name">@SridharKumarKannam</div>
+          <div class="yt-sub">YouTube — Data Science, AI &amp; Automation</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>I enjoy solving problems with data, software, and AI.</p>
+  </div>
+</footer>
+
+</body>
+</html>
