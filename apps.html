@@ -96,16 +96,16 @@
     }
     .app-links a.link-docs:hover { background: #0891b2; color: #fff; }
 
-    /* I/O line */
+    /* I/O block */
     .app-io {
-      font-size: .8rem; margin: .55rem 0 .7rem;
-      padding: .45rem .75rem; border-radius: 6px;
+      font-size: .88rem; margin: .6rem 0;
+      padding: .55rem .75rem; border-radius: 6px;
       background: #f0f9ff; border-left: 3px solid #bfdbfe;
-      display: flex; flex-wrap: wrap; gap: .3rem; align-items: baseline;
+      display: flex; flex-direction: column; gap: .25rem;
     }
-    .io-in  { font-weight: 600; color: #b45309; }
-    .io-out { font-weight: 600; color: #15803d; }
-    .io-arrow { color: var(--accent); font-weight: 700; margin: 0 .15rem; }
+    .io-row { display: flex; gap: .5rem; align-items: baseline; }
+    .io-in  { font-weight: 600; color: #b45309; min-width: 52px; flex-shrink: 0; }
+    .io-out { font-weight: 600; color: #15803d; min-width: 52px; flex-shrink: 0; }
     .io-text { color: #374151; }
 
     footer {
@@ -141,9 +141,15 @@
 <main id="main">
   <section>
     <div class="wrap">
-      <p style="margin-bottom: 2rem; text-align: justify;">
+      <p style="margin-bottom: 1rem; text-align: justify;">
         Thanks to AI coding assistants, now I can give a face to my ideas. I'm a backend guy with no
         frontend development skills.
+      </p>
+      <p style="margin-bottom: 2rem; font-size: .9rem; color: var(--muted); text-align: justify;">
+        Some of these apps take user input — for example AIDentify takes an image and detects if it's
+        AI-generated, Redact Docs takes a PDF and redacts PII — while others are already loaded with input
+        data and show only the output, for example RAG Monitor is pre-loaded with user conversations and
+        Web Inspector is pre-loaded with a website for inspection.
       </p>
 
       <div class="app-grid">
@@ -160,14 +166,8 @@
           </div>
           <p class="app-desc">Analyses any image using 10 independent pixel-level algorithms — frequency patterns, noise, symmetry, and metadata — to determine if it was AI-generated or captured with a real camera. Returns a single probability score with a per-algorithm breakdown.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">Image file (JPEG, PNG, WebP, BMP up to 20 MB)</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">AI probability score (0–100%) with verdict and per-algorithm breakdown</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">Image forensics</span>
-            <span class="app-tag">AI detection</span>
-            <span class="app-tag">Open API</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Image file (JPEG, PNG, WebP, BMP — up to 20 MB)</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">AI probability score (0–100%) with verdict and per-algorithm breakdown</span></div>
           </div>
         </div>
 
@@ -182,14 +182,8 @@
           </div>
           <p class="app-desc">Detects and removes sensitive personal information from PDF documents using local or cloud AI. Review every finding before committing, then download a clean file with PII physically removed — not just hidden.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">PDF containing sensitive data</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">Redacted PDF with PII physically removed</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">PDF</span>
-            <span class="app-tag">PII detection</span>
-            <span class="app-tag">Privacy</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">PDF containing sensitive data</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Redacted PDF with PII physically removed</span></div>
           </div>
         </div>
 
@@ -203,14 +197,8 @@
           </div>
           <p class="app-desc">Production analytics dashboard for RAG-based helpdesk systems. Scores every conversation on 6 LLM-as-judge metrics and surfaces document gaps, performance regressions, and safety alerts.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">Production RAG conversation logs</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">Quality scorecards, retrieval rankings, safety alerts, and coverage-gap reports</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">RAG</span>
-            <span class="app-tag">Analytics</span>
-            <span class="app-tag">LLM monitoring</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Production RAG conversation logs (pre-loaded)</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Quality scorecards, retrieval rankings, safety alerts, and coverage-gap reports</span></div>
           </div>
         </div>
 
@@ -224,14 +212,8 @@
           </div>
           <p class="app-desc">Crawls a website and generates a comprehensive quality audit across 13 dimensions — accessibility, reading level, broken links, metadata gaps, and duplicate content. Analyses up to 50 pages and produces a self-contained HTML report.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">Website URL</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">Self-contained HTML quality audit report across 13 dimensions</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">Web quality</span>
-            <span class="app-tag">Accessibility</span>
-            <span class="app-tag">Audit</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Website URL (pre-loaded)</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Self-contained HTML quality audit report across 13 dimensions</span></div>
           </div>
         </div>
 
@@ -245,14 +227,8 @@
           </div>
           <p class="app-desc">Interactive probability visualiser that generates all possible outcomes for coin flips, dice rolls, or card draws, then highlights matches for your natural-language question. Shows probability as a fraction, percentage, and plain-English summary with an animated scan.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">Natural-language probability question (e.g. "at least 2 heads in 3 flips")</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">Animated outcome visualisation with exact probability</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">Probability</span>
-            <span class="app-tag">Education</span>
-            <span class="app-tag">Visualisation</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Natural-language probability question (e.g. "at least 2 heads in 3 flips")</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Animated outcome visualisation with exact probability</span></div>
           </div>
         </div>
 
@@ -266,14 +242,8 @@
           </div>
           <p class="app-desc">Decision-support tool for evaluating and selecting AI language models based on cost, performance, environmental impact, and data sovereignty requirements. Provides side-by-side comparisons, a guided selection wizard, and carbon footprint estimates.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">Priorities, classification needs, and workload details</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">Ranked model recommendations with procurement pathway and environmental impact</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">LLM evaluation</span>
-            <span class="app-tag">Decision support</span>
-            <span class="app-tag">Sustainability</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Priorities, classification needs, and workload details</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Ranked model recommendations with procurement pathway and environmental impact</span></div>
           </div>
         </div>
 
@@ -282,19 +252,13 @@
           <div class="app-card-header">
             <span class="app-name">MFCompare</span>
             <div class="app-links">
-              <a class="link-app" href="https://storage.googleapis.com/rag-monitor/index.html" target="_blank" rel="noopener">Launch app →</a>
+              <a class="link-app" href="https://storage.googleapis.com/mf-compare/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
           <p class="app-desc">Reveals portfolio overlap across Indian mutual funds — showing actual stock positions and sector exposure combined across all selected funds. Helps investors see what they truly own rather than relying on fund names alone.</p>
           <div class="app-io">
-            <span class="io-in">Input</span><span class="io-text">Selected mutual funds</span>
-            <span class="io-arrow">→</span>
-            <span class="io-out">Output</span><span class="io-text">Portfolio overlap analysis with stock positions and sector breakdown</span>
-          </div>
-          <div class="app-tags">
-            <span class="app-tag">Finance</span>
-            <span class="app-tag">Mutual funds</span>
-            <span class="app-tag">India</span>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Selected mutual funds</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Portfolio overlap analysis with stock positions and sector breakdown</span></div>
           </div>
         </div>
 
