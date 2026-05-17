@@ -95,6 +95,10 @@
       color: #0891b2; border: 1px solid #0891b2;
     }
     .app-links a.link-docs:hover { background: #0891b2; color: #fff; }
+    .app-links a.link-github {
+      color: #374151; border: 1px solid #374151;
+    }
+    .app-links a.link-github:hover { background: #374151; color: #fff; }
 
     /* I/O block */
     .app-io {
@@ -154,13 +158,12 @@
 
       <div class="app-grid">
 
-        <!-- AIDentify -->
+        <!-- 1. AIDentify -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">AIDentify</span>
             <div class="app-links">
               <a class="link-app" href="https://storage.googleapis.com/aidentify/index.html" target="_blank" rel="noopener">Launch app →</a>
-              <a class="link-api" href="https://aidentify-api-m25nqxrdja-uc.a.run.app/docs" target="_blank" rel="noopener">API →</a>
               <a class="link-docs" href="https://storage.googleapis.com/aidentify-api-docs/index.html" target="_blank" rel="noopener">API Docs →</a>
             </div>
           </div>
@@ -171,13 +174,12 @@
           </div>
         </div>
 
-        <!-- Redact Docs -->
+        <!-- 2. Redact Docs -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">Redact Docs</span>
             <div class="app-links">
               <a class="link-app" href="https://storage.googleapis.com/redact-docs/index.html" target="_blank" rel="noopener">Launch app →</a>
-              <a class="link-api" href="https://redact-docs-api-m25nqxrdja-uc.a.run.app/docs" target="_blank" rel="noopener">API →</a>
             </div>
           </div>
           <p class="app-desc">Detects and removes sensitive personal information from PDF documents using local or cloud AI. Review every finding before committing, then download a clean file with PII physically removed — not just hidden.</p>
@@ -187,7 +189,7 @@
           </div>
         </div>
 
-        <!-- RAG Monitor -->
+        <!-- 3. RAG Monitor -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">RAG Monitor</span>
@@ -202,7 +204,7 @@
           </div>
         </div>
 
-        <!-- Web Inspector -->
+        <!-- 4. Web Inspector -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">Web Inspector</span>
@@ -217,7 +219,38 @@
           </div>
         </div>
 
-        <!-- IntuiteMe -->
+        <!-- 5. DBDocs -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">DBDocs</span>
+            <div class="app-links">
+              <a class="link-app" href="https://storage.googleapis.com/db-documentation/index.html" target="_blank" rel="noopener">Launch app →</a>
+              <a class="link-github" href="https://github.com/KannamSridharKumar/DBDocs" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+          <p class="app-desc">Automatically generates interactive HTML documentation from a database by analysing its schema, statistics, and relationships. Produces three reports — a data dictionary, statistical profiling, and an entity-relationship diagram — with no configuration required.</p>
+          <div class="app-io">
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Database connection string (PostgreSQL, MySQL, SQLite, MSSQL, or Oracle)</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Three self-contained HTML files: schema docs, data quality metrics, and interactive ER diagram</span></div>
+          </div>
+        </div>
+
+        <!-- 6. Style Guide -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">Style Guide</span>
+            <div class="app-links">
+              <a class="link-app" href="https://storage.googleapis.com/writing-style-guide/index.html" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">Reviews content drafts against the Australian Government Style Manual, flagging issues by severity and scoring across ten writing categories. Delivers a complete rewrite plus detailed feedback to improve clarity and compliance.</p>
+          <div class="app-io">
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Draft text, content type, intended audience, and desired tone</span></div>
+            <div class="io-row"><span class="io-out">Output</span><span class="io-text">Overall score, issue list with citations, annotated draft, and full rewrite</span></div>
+          </div>
+        </div>
+
+        <!-- 7. IntuiteMe -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">IntuiteMe</span>
@@ -232,7 +265,7 @@
           </div>
         </div>
 
-        <!-- LLM Selector -->
+        <!-- 8. LLM Selector -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">LLM Selector</span>
@@ -247,7 +280,7 @@
           </div>
         </div>
 
-        <!-- MFCompare -->
+        <!-- 9. MFCompare -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">MFCompare</span>
