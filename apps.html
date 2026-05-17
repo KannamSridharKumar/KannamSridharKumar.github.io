@@ -79,19 +79,34 @@
     }
     .app-links { display: flex; flex-wrap: wrap; gap: .4rem; flex-shrink: 0; }
     .app-links a {
-      font-size: .78rem; color: var(--accent);
-      border: 1px solid var(--accent); border-radius: 5px;
-      padding: .2rem .6rem; text-decoration: none;
+      font-size: .75rem; border-radius: 5px;
+      padding: .18rem .55rem; text-decoration: none; font-weight: 500;
       transition: background .15s, color .15s;
     }
-    .app-links a:hover { background: var(--accent); color: #fff; }
-
-    /* Empty state */
-    .empty {
-      text-align: center; padding: 4rem 0; color: var(--muted);
+    .app-links a.link-app {
+      color: var(--accent); border: 1px solid var(--accent);
     }
-    .empty-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .empty p { font-size: .9rem; }
+    .app-links a.link-app:hover { background: var(--accent); color: #fff; }
+    .app-links a.link-api {
+      color: #7c3aed; border: 1px solid #7c3aed;
+    }
+    .app-links a.link-api:hover { background: #7c3aed; color: #fff; }
+    .app-links a.link-docs {
+      color: #0891b2; border: 1px solid #0891b2;
+    }
+    .app-links a.link-docs:hover { background: #0891b2; color: #fff; }
+
+    /* I/O line */
+    .app-io {
+      font-size: .8rem; margin: .55rem 0 .7rem;
+      padding: .45rem .75rem; border-radius: 6px;
+      background: #f0f9ff; border-left: 3px solid #bfdbfe;
+      display: flex; flex-wrap: wrap; gap: .3rem; align-items: baseline;
+    }
+    .io-in  { font-weight: 600; color: #b45309; }
+    .io-out { font-weight: 600; color: #15803d; }
+    .io-arrow { color: var(--accent); font-weight: 700; margin: 0 .15rem; }
+    .io-text { color: #374151; }
 
     footer {
       padding: 2rem 0; text-align: center;
@@ -133,38 +148,107 @@
 
       <div class="app-grid">
 
+        <!-- AIDentify -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">AIDentify</span>
             <div class="app-links">
-              <a href="https://gray-meadow-07670830f.2.azurestaticapps.net" target="_blank" rel="noopener">Launch app →</a>
-              <a href="https://aididentifydocs.z13.web.core.windows.net/" target="_blank" rel="noopener">API docs →</a>
-              <a href="https://AIDentify-api-wojfgv.azurewebsites.net/docs" target="_blank" rel="noopener">Swagger →</a>
+              <a class="link-app" href="https://storage.googleapis.com/aidentify/index.html" target="_blank" rel="noopener">Launch app →</a>
+              <a class="link-api" href="https://aidentify-api-m25nqxrdja-uc.a.run.app" target="_blank" rel="noopener">API →</a>
+              <a class="link-docs" href="https://storage.googleapis.com/aidentify-api-docs/index.html" target="_blank" rel="noopener">API Docs →</a>
             </div>
           </div>
-          <p class="app-desc">
-            Can you tell if an image is real or AI-generated? AIDentify analyses images using 10 independent
-            pixel-level algorithms — FFT spectral analysis, noise pattern detection, texture analysis, and more —
-            returning a probability score and a plain-English verdict. No sign-up needed; just drag and drop.
-          </p>
+          <p class="app-desc">Analyses any image using 10 independent pixel-level algorithms — frequency patterns, noise, symmetry, and metadata — to determine if it was AI-generated or captured with a real camera. Returns a single probability score with a per-algorithm breakdown.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">Image file (JPEG, PNG, WebP, BMP up to 20 MB)</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">AI probability score (0–100%) with verdict and per-algorithm breakdown</span>
+          </div>
           <div class="app-tags">
             <span class="app-tag">Image forensics</span>
             <span class="app-tag">AI detection</span>
+            <span class="app-tag">Open API</span>
           </div>
         </div>
 
+        <!-- Redact Docs -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">Redact Docs</span>
+            <div class="app-links">
+              <a class="link-app" href="https://storage.googleapis.com/redact-docs/index.html" target="_blank" rel="noopener">Launch app →</a>
+              <a class="link-api" href="https://redact-docs-api-m25nqxrdja-uc.a.run.app" target="_blank" rel="noopener">API →</a>
+            </div>
+          </div>
+          <p class="app-desc">Detects and removes sensitive personal information from PDF documents using local or cloud AI. Review every finding before committing, then download a clean file with PII physically removed — not just hidden.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">PDF containing sensitive data</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">Redacted PDF with PII physically removed</span>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">PDF</span>
+            <span class="app-tag">PII detection</span>
+            <span class="app-tag">Privacy</span>
+          </div>
+        </div>
+
+        <!-- RAG Monitor -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">RAG Monitor</span>
+            <div class="app-links">
+              <a class="link-app" href="https://storage.googleapis.com/rag-monitor/index.html" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">Production analytics dashboard for RAG-based helpdesk systems. Scores every conversation on 6 LLM-as-judge metrics and surfaces document gaps, performance regressions, and safety alerts.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">Production RAG conversation logs</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">Quality scorecards, retrieval rankings, safety alerts, and coverage-gap reports</span>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">RAG</span>
+            <span class="app-tag">Analytics</span>
+            <span class="app-tag">LLM monitoring</span>
+          </div>
+        </div>
+
+        <!-- Web Inspector -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">Web Inspector</span>
+            <div class="app-links">
+              <a class="link-app" href="https://storage.googleapis.com/web-inspector/index.html" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">Crawls a website and generates a comprehensive quality audit across 13 dimensions — accessibility, reading level, broken links, metadata gaps, and duplicate content. Analyses up to 50 pages and produces a self-contained HTML report.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">Website URL</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">Self-contained HTML quality audit report across 13 dimensions</span>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">Web quality</span>
+            <span class="app-tag">Accessibility</span>
+            <span class="app-tag">Audit</span>
+          </div>
+        </div>
+
+        <!-- IntuiteMe -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">IntuiteMe</span>
             <div class="app-links">
-              <a href="https://intuitemeweb.z13.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
+              <a class="link-app" href="https://storage.googleapis.com/intuite-me/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">
-            Probability can feel abstract and intimidating. IntuiteMe makes it concrete — pick coins, dice,
-            or cards, ask a question in plain English, and the app scans every possible outcome, highlights
-            matches, and shows you the exact probability as a fraction, percentage, and a clear explanation.
-          </p>
+          <p class="app-desc">Interactive probability visualiser that generates all possible outcomes for coin flips, dice rolls, or card draws, then highlights matches for your natural-language question. Shows probability as a fraction, percentage, and plain-English summary with an animated scan.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">Natural-language probability question (e.g. "at least 2 heads in 3 flips")</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">Animated outcome visualisation with exact probability</span>
+          </div>
           <div class="app-tags">
             <span class="app-tag">Probability</span>
             <span class="app-tag">Education</span>
@@ -172,82 +256,45 @@
           </div>
         </div>
 
+        <!-- LLM Selector -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-name">LLM Selector</span>
+            <div class="app-links">
+              <a class="link-app" href="https://storage.googleapis.com/llm-selector/index.html" target="_blank" rel="noopener">Launch app →</a>
+            </div>
+          </div>
+          <p class="app-desc">Decision-support tool for evaluating and selecting AI language models based on cost, performance, environmental impact, and data sovereignty requirements. Provides side-by-side comparisons, a guided selection wizard, and carbon footprint estimates.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">Priorities, classification needs, and workload details</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">Ranked model recommendations with procurement pathway and environmental impact</span>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">LLM evaluation</span>
+            <span class="app-tag">Decision support</span>
+            <span class="app-tag">Sustainability</span>
+          </div>
+        </div>
+
+        <!-- MFCompare -->
         <div class="app-card">
           <div class="app-card-header">
             <span class="app-name">MFCompare</span>
             <div class="app-links">
-              <a href="https://mfcompareapp.z8.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
+              <a class="link-app" href="https://storage.googleapis.com/rag-monitor/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">
-            With 2,000+ mutual funds in India, do you really know what you own? MFCompare reveals the overlap
-            between funds in your portfolio — showing your actual stock positions and sector exposure across
-            all funds combined, so you can invest with clarity rather than guesswork.
-          </p>
+          <p class="app-desc">Reveals portfolio overlap across Indian mutual funds — showing actual stock positions and sector exposure combined across all selected funds. Helps investors see what they truly own rather than relying on fund names alone.</p>
+          <div class="app-io">
+            <span class="io-in">Input</span><span class="io-text">Selected mutual funds</span>
+            <span class="io-arrow">→</span>
+            <span class="io-out">Output</span><span class="io-text">Portfolio overlap analysis with stock positions and sector breakdown</span>
+          </div>
           <div class="app-tags">
             <span class="app-tag">Finance</span>
             <span class="app-tag">Mutual funds</span>
             <span class="app-tag">India</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-card-header">
-            <span class="app-name">DBDocs</span>
-            <div class="app-links">
-              <a href="https://github.com/KannamSridharKumar/DBDocs" target="_blank" rel="noopener">GitHub →</a>
-              <a href="https://github.com/KannamSridharKumar/DBDocs/tree/main/sample_output/chinook" target="_blank" rel="noopener">Chinook DB →</a>
-              <a href="https://github.com/KannamSridharKumar/DBDocs/tree/main/sample_output/northwind" target="_blank" rel="noopener">Northwind DB →</a>
-            </div>
-          </div>
-          <p class="app-desc">
-            Documenting a database is tedious work that rarely gets done. DBDocs automates it — connect to
-            your database and it handles schema discovery, data profiling, and generates an AI-powered data
-            dictionary. Open source and built for teams who want to understand their data without the toil.
-          </p>
-          <div class="app-tags">
-            <span class="app-tag">Data engineering</span>
-            <span class="app-tag">Documentation</span>
-            <span class="app-tag">Open source</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-card-header">
-            <span class="app-name">SOTU Archive</span>
-            <div class="app-links">
-              <a href="https://sotuapp1web.z8.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
-            </div>
-          </div>
-          <p class="app-desc">
-            Every U.S. State of the Union address from 1790 to 2026, searchable and conversational. Combine
-            keyword search for precise matches with AI-powered chat (RAG) to explore themes, compare eras,
-            and ask deeper questions across 230+ years of presidential speeches.
-          </p>
-          <div class="app-tags">
-            <span class="app-tag">RAG</span>
-            <span class="app-tag">History</span>
-            <span class="app-tag">Search</span>
-          </div>
-        </div>
-
-        <div class="app-card">
-          <div class="app-card-header">
-            <span class="app-name">PDF Redact</span>
-            <div class="app-links">
-              <a href="https://redaxpiiweb1d1bc2.z13.web.core.windows.net/" target="_blank" rel="noopener">Launch app →</a>
-              <a href="https://redaxpii-api-1d1bc2.azurewebsites.net/docs" target="_blank" rel="noopener">Swagger →</a>
-            </div>
-          </div>
-          <p class="app-desc">
-            Upload a PDF, detect sensitive information with local or cloud AI, review every finding, and
-            download a clean file with PII physically removed — not just hidden. Supports customisable
-            redaction settings so you control exactly what gets removed.
-          </p>
-          <div class="app-tags">
-            <span class="app-tag">PDF</span>
-            <span class="app-tag">PII detection</span>
-            <span class="app-tag">Privacy</span>
           </div>
         </div>
 
