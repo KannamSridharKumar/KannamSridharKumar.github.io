@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <meta name="description" content="Apps — Sridhar Kumar Kannam, PhD" />
+  <meta name="description" content="Apps, Sridhar Kumar Kannam, PhD" />
   <title>Apps · Sridhar Kumar Kannam</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,8 +18,7 @@
       --accent:  #2563eb;
       --border:  #e5e7eb;
       --surface: #f9fafb;
-      --max-w:   700px;
-      --max-w-wide: 1020px;
+      --max-w:   1020px;
       --font: 'Inter', -apple-system, system-ui, sans-serif;
     }
 
@@ -46,8 +45,7 @@
     .nav-links a:hover { color: var(--text); text-decoration: none; }
     .nav-links a.active { color: var(--text); font-weight: 600; }
 
-    .wrap       { max-width: var(--max-w);      margin: 0 auto; padding: 0 1.5rem; }
-    .wrap-wide  { max-width: var(--max-w-wide); margin: 0 auto; padding: 0 1.5rem; }
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 3rem 0; }
 
     h2 {
@@ -140,14 +138,14 @@
 
 <main id="main">
   <section>
-    <div class="wrap-wide">
-      <p style="margin-bottom: 1rem; max-width: 700px;">
+    <div class="wrap">
+      <p style="margin-bottom: 1rem;">
         Thanks to AI coding assistants, now I can give a face to my ideas. I'm a backend guy with no
         frontend development skills.
       </p>
-      <p style="margin-bottom: 2rem; font-size: .9rem; color: var(--muted); max-width: 700px;">
-        Some of these apps take user input — for example AIDentify takes an image and detects if it's
-        AI-generated, Redact Docs takes a PDF and redacts PII — while others are already loaded with input
+      <p style="margin-bottom: 2rem; font-size: .9rem; color: var(--muted);">
+        Some of these apps take user input, for example AIDentify takes an image and detects if it's
+        AI-generated, Redact Docs takes a PDF and redacts PII, while others are already loaded with input
         data and show only the output, for example RAG Monitor is pre-loaded with user conversations and
         Web Inspector is pre-loaded with a website for inspection.
       </p>
@@ -163,9 +161,9 @@
               <a class="link-docs" href="https://storage.googleapis.com/aidentify-api-docs/index.html" target="_blank" rel="noopener">API Docs →</a>
             </div>
           </div>
-          <p class="app-desc">Analyses any image using 10 independent pixel-level algorithms — frequency patterns, noise, symmetry, and metadata — to determine if it was AI-generated or captured with a real camera. Returns a single probability score with a per-algorithm breakdown.</p>
+          <p class="app-desc">Analyses any image using 10 pixel-level algorithms to determine if it was AI-generated or captured with a real camera.</p>
           <div class="app-io">
-            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Image file (JPEG, PNG, WebP, BMP — up to 20 MB)</span></div>
+            <div class="io-row"><span class="io-in">Input</span><span class="io-text">Image file (JPEG, PNG, WebP, BMP, up to 20 MB)</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">AI probability score (0–100%) with verdict and per-algorithm breakdown</span></div>
           </div>
         </div>
@@ -178,7 +176,7 @@
               <a class="link-app" href="https://storage.googleapis.com/redact-docs/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Detects and removes sensitive personal information from PDF documents using local or cloud AI. Review every finding before committing, then download a clean file with PII physically removed — not just hidden.</p>
+          <p class="app-desc">Scans PDFs for sensitive personal information using AI. Review each finding before approving, then download a clean file with PII physically removed, not just hidden.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">PDF containing sensitive data</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Redacted PDF with PII physically removed</span></div>
@@ -193,7 +191,7 @@
               <a class="link-app" href="https://storage.googleapis.com/rag-monitor/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Production analytics dashboard for RAG-based helpdesk systems. Scores every conversation on 6 LLM-as-judge metrics and surfaces document gaps, performance regressions, and safety alerts.</p>
+          <p class="app-desc">An analytics dashboard for RAG-based helpdesk systems. Evaluates every conversation using AI judges and surfaces knowledge gaps, regressions, and safety issues.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Production RAG conversation logs (pre-loaded)</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Quality scorecards, retrieval rankings, safety alerts, and coverage-gap reports</span></div>
@@ -208,7 +206,7 @@
               <a class="link-app" href="https://storage.googleapis.com/web-inspector/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Crawls a website and generates a comprehensive quality audit across 13 dimensions — accessibility, reading level, broken links, metadata gaps, and duplicate content. Analyses up to 50 pages and produces a self-contained HTML report.</p>
+          <p class="app-desc">Crawls a website and audits it across 13 dimensions: accessibility, reading level, broken links, metadata gaps, and duplicate content. Covers up to 50 pages.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Website URL (pre-loaded)</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Self-contained HTML quality audit report across 13 dimensions</span></div>
@@ -224,7 +222,7 @@
               <a class="link-github" href="https://github.com/KannamSridharKumar/DBDocs" target="_blank" rel="noopener">GitHub →</a>
             </div>
           </div>
-          <p class="app-desc">Automatically generates interactive HTML documentation from a database by analysing its schema, statistics, and relationships. Produces three reports — a data dictionary, statistical profiling, and an entity-relationship diagram — with no configuration required.</p>
+          <p class="app-desc">Connects to a database and auto-generates interactive HTML documentation from its schema, statistics, and relationships. No configuration required.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Database connection string (PostgreSQL, MySQL, SQLite, MSSQL, or Oracle)</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Three self-contained HTML files: schema docs, data quality metrics, and interactive ER diagram</span></div>
@@ -239,7 +237,7 @@
               <a class="link-app" href="https://storage.googleapis.com/writing-style-guide/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Reviews content drafts against the Australian Government Style Manual, flagging issues by severity and scoring across ten writing categories. Delivers a complete rewrite plus detailed feedback to improve clarity and compliance.</p>
+          <p class="app-desc">Checks your content against the Australian Government Style Manual, flags issues by severity, and scores it across ten writing categories.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Draft text, content type, intended audience, and desired tone</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Overall score, issue list with citations, annotated draft, and full rewrite</span></div>
@@ -254,7 +252,7 @@
               <a class="link-app" href="https://storage.googleapis.com/intuite-me/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Interactive probability visualiser that generates all possible outcomes for coin flips, dice rolls, or card draws, then highlights matches for your natural-language question. Shows probability as a fraction, percentage, and plain-English summary with an animated scan.</p>
+          <p class="app-desc">Visualises all possible outcomes for coin flips, dice rolls, or card draws, and highlights the ones that match your question.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Natural-language probability question (e.g. "at least 2 heads in 3 flips")</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Animated outcome visualisation with exact probability</span></div>
@@ -269,7 +267,7 @@
               <a class="link-app" href="https://storage.googleapis.com/llm-selector/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Decision-support tool for evaluating and selecting AI language models based on cost, performance, environmental impact, and data sovereignty requirements. Provides side-by-side comparisons, a guided selection wizard, and carbon footprint estimates.</p>
+          <p class="app-desc">Helps you choose the right AI model based on cost, performance, environmental impact, and data sovereignty needs.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Priorities, classification needs, and workload details</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Ranked model recommendations with procurement pathway and environmental impact</span></div>
@@ -284,7 +282,7 @@
               <a class="link-app" href="https://storage.googleapis.com/mf-compare/index.html" target="_blank" rel="noopener">Launch app →</a>
             </div>
           </div>
-          <p class="app-desc">Reveals portfolio overlap across Indian mutual funds — showing actual stock positions and sector exposure combined across all selected funds. Helps investors see what they truly own rather than relying on fund names alone.</p>
+          <p class="app-desc">Shows the true portfolio overlap across your selected Indian mutual funds, so you can see what you actually own beyond the fund names.</p>
           <div class="app-io">
             <div class="io-row"><span class="io-in">Input</span><span class="io-text">Selected mutual funds</span></div>
             <div class="io-row"><span class="io-out">Output</span><span class="io-text">Portfolio overlap analysis with stock positions and sector breakdown</span></div>
